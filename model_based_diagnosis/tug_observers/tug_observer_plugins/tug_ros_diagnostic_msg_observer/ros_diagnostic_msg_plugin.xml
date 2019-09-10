@@ -1,0 +1,8 @@
+<library path="lib/libros_diagnostic_msg_plugin">
+  <class name="ros_diagnostic_msg" type="tug_observer_plugins_cpp::ROSDiagnoisticMSGPlugin"
+         base_class_type="tug_observers::ObserverPluginBase">
+    <description>
+      Observer plugin forwards diagnoistics messages send to the observer topic, for a specified node set.
+    </description>
+  </class>
+</library>

@@ -1,0 +1,14 @@
+#so much empty, much wow
+#update this file after all observers are enumerated and tested
+
+
+nodes:
+  - name: "ESR"
+    sub_topic: []
+    pub_topic: ["/topic1"]	#fill with real topics
+
+
+
+observations:
+  - type: "activated"
+    nodes: ["ESR"]

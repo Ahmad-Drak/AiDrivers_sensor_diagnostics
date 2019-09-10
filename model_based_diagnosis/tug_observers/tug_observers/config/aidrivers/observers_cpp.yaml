@@ -1,0 +1,17 @@
+setup:
+- type: activated
+  resource_topic: /diag/node_infos
+  nodes:
+  - name: /ESR
+
+- type: timeout
+  topics: 
+  - name: /diag/node_infos
+    callerids:
+    - callerid: []
+      timeout: 1.0
+      max_timeouts_in_a_row: 2000
+
+- type: ros_diagnostic_msg
+  nodes_of_interest: /ESR
+	

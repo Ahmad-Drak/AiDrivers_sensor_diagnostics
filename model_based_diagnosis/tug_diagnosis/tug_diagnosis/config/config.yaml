@@ -1,0 +1,55 @@
+nodes:
+  - name: "node1"
+    sub_topic: []
+    pub_topic: ["/topic1"]
+
+  - name: "node2"
+    sub_topic: ["/topic1"]
+    pub_topic: ["/topic2"]
+
+  - name: "node3"
+    sub_topic: ["/topic2"]
+    pub_topic: ["/topic3"]
+
+observations:
+  - type: "activated"
+    nodes: ["node1"]
+
+  - type: "activated"
+    nodes: ["node2"]
+
+  - type: "activated"
+    nodes: ["node3"]
+
+  - type: "hz"
+    topics: ["/topic1"]
+
+  - type: "hz"
+    topics: ["/topic2"]
+
+  - type: "hz"
+    topics: ["/topic3"]
+
+  - type: "timestamp"
+    topics: ["/topic1"]
+
+  - type: "timestamp"
+    topics: ["/topic2"]
+
+  - type: "timestamp"
+    topics: ["/topic3"]
+
+  - type: "scores"
+    topics: ["/topic1"]
+
+  - type: "scores"
+    topics: ["/topic2"]
+
+  - type: "scores"
+    topics: ["/topic3"]
+
+  - type: "velocity"
+    topics: ["/topic1", "/topic2"]
+
+  - type: "timing"
+    topics: ["/topic1", "/topic2"]

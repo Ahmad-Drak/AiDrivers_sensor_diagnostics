@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+  <!--<include file="$(find tug_resource_monitor)/launch/aidrivers.launch"></include>-->
+  <include file="$(find tug_observes)/launch/aidrivers/observer_cpp_aidrivers.launch"></include>
+  <include file="$(find tug_observes)/launch/aidrivers/observer_python_aidrivers.launch"></include>
+</launch>

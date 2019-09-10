@@ -1,0 +1,6 @@
+nodes_to_observer:
+  #- /xsens1/mtnode
+  #- /delphi_esr_can
+  - /rs16_bl
+  #- /cam_front_bottom_centre/camera_nodelet
+

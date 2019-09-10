@@ -1,0 +1,163 @@
+setup:
+- type: timeout
+  use_global_subscriber: true
+  topics: 
+  - name: /diag/node_infos
+    callerids:
+    - callerid: []
+      timeout: 1.0
+      max_timeouts_in_a_row: 2
+  - name: /rs16_bl/rslidar_points
+    callerids:
+    - callerid: []
+      timeout: 2.0
+      max_timeouts_in_a_row: 20 
+  - name: /rs16_br/rslidar_points
+    callerids:
+    - callerid: []
+      timeout: 2.0
+      max_timeouts_in_a_row: 20 
+#  - name: /rs16_tc/rslidar_points
+#    callerids:
+#    - callerid: []
+#      timeout: 2.0
+#      max_timeouts_in_a_row: 20 
+#  - name: /rs16_tl/rslidar_points
+#    callerids:
+#    - callerid: []
+#      timeout: 2.0
+#      max_timeouts_in_a_row: 20 
+#  - name: /rs16_tr/rslidar_points
+#    callerids:
+#    - callerid: []
+#      timeout: 2.0
+#      max_timeouts_in_a_row: 20 
+
+#- type: activated
+#  resource_topic: /diag/node_infos
+#  nodes:
+#  - name: /rs16_bl
+
+- type: hz
+  main_loop_rate: 1.0
+  topics:
+  - name: /rs16_bl/rslidar_packets
+    callerids:
+    - callerid: []
+      filter:      
+        type: mean
+        window_size: 10
+        deviation_type: std_deviation
+      states:
+      - state: 'ok'
+        number: 0
+        frequenzy:
+          type: student_t
+          true_mean: 0.1
+          std_deviation: 0.004           # optional 0.004 works
+          significance_level: 0.05   
+#      - state: 'NOTok'
+#        number: -1
+#        frequenzy:
+#          type: student_t
+#          true_mean: 0.0
+#          std_deviation: 0.01           # 0.08
+#          significance_level: 0.05  
+#  - name: /rs16_br/rslidar_points
+#    callerids:
+#    - callerid: []
+#      filter:      
+#        type: mean
+#        window_size: 10
+#        deviation_type: std_deviation
+#      states:
+#      - state: 'ok'
+#        number: 0
+#        frequenzy:
+#          type: student_t
+#          true_mean: 0.5
+#          std_deviation: 0.5           # optional
+#          significance_level: 0.05   
+#      - state: 'NOTok'
+#        number: -1
+#        frequenzy:
+#          type: student_t
+#          true_mean: 0.0
+#          std_deviation: 0.01           # 0.08
+#          significance_level: 0.05 
+#  - name: /rs16_tc/rslidar_points
+#    callerids:
+#    - callerid: []
+#      filter:      
+#        type: mean
+#        window_size: 10
+#        deviation_type: std_deviation
+#      states:
+#      - state: 'ok'
+#        number: 0
+#        frequenzy:
+#          type: student_t
+#          true_mean: 0.5
+#          std_deviation: 0.5           # optional
+#          significance_level: 0.05   
+#      - state: 'NOTok'
+#        number: -1
+#        frequenzy:
+#          type: student_t
+#          true_mean: 0.0
+#          std_deviation: 0.01           # 0.08
+#          significance_level: 0.05 
+#  - name: /rs16_tl/rslidar_points
+#    callerids:
+#    - callerid: []
+#      filter:      
+#        type: mean
+#        window_size: 10
+#        deviation_type: std_deviation
+#      states:
+#      - state: 'ok'
+#        number: 0
+#        frequenzy:
+#          type: student_t
+#          true_mean: 0.5
+#          std_deviation: 0.5           # optional
+#          significance_level: 0.05   
+#      - state: 'NOTok'
+#        number: -1
+#        frequenzy:
+#          type: student_t
+#          true_mean: 0.0
+#          std_deviation: 0.01           # 0.08
+#          significance_level: 0.05 
+#  - name: /rs16_tr/rslidar_points
+#    callerids:
+#    - callerid: []
+#      filter:      
+#        type: mean
+#        window_size: 10
+#        deviation_type: std_deviation
+#      states:
+#      - state: 'ok'
+#        number: 0
+#        frequenzy:
+#          type: student_t
+#          true_mean: 0.5
+#          std_deviation: 0.5           # optional
+#          significance_level: 0.05   
+#      - state: 'NOTok'
+#        number: -1
+#        frequenzy:
+#          type: student_t
+#          true_mean: 0.0
+#          std_deviation: 0.01           # 0.08
+#          significance_level: 0.05 
+
+
+
+
+
+
+#- type: error_msg
+#  nodes_of_interest: /rs16_bl
+
+

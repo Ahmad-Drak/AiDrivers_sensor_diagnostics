@@ -1,0 +1,5 @@
+nodes_to_observer:
+  - "/ESR"
+  - "/node_A"
+  - "/node_B"
+

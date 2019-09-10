@@ -1,0 +1,8 @@
+<library path="lib/liberror_msg_plugin">
+  <class name="error_msg" type="tug_observer_plugins_cpp::ErrorMSGPlugin"
+         base_class_type="tug_observers::ObserverPluginBase">
+    <description>
+      Observer plugin forwards error messages send to console to the observer topic, for a specified node.
+    </description>
+  </class>
+</library>

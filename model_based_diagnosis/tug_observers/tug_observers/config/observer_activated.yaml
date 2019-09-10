@@ -1,0 +1,5 @@
+setup:
+- type: activated
+  resource_topic: /diag/node_infos
+  nodes:
+  - name: /ESR

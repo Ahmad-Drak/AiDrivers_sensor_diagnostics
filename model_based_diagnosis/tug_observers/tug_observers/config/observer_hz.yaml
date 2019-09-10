@@ -1,0 +1,22 @@
+########## node1 ##########
+setup:
+- type: hz
+#  start_up_time: 10.0
+  main_loop_rate: 1.0
+  use_global_subscriber: true
+  topics:
+  - name: /topicA
+    callerids:
+    - callerid: []
+      filter:
+        type: mean                      #exponentially weighted moving average
+        window_size: 5
+        deviation_type: std_deviation   # std_deviation, min_max
+      states:
+      - state: 'student_t'
+        number: 1
+        frequenzy:
+          type: student_t
+          true_mean: 0.10
+          significance_level: 0.05
+          std_deviation: 0.0003
