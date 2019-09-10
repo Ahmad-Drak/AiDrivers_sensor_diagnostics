@@ -2,12 +2,6 @@
 
 ## Installation
 
-Clone this repo 
-```
-cd ~catkin_ws/src
-git clone git@github.com:Ahmad-Drak/aid.git
-```
-
 
 Prerequisites (kinetic):
 ```bash
